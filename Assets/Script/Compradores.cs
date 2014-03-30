@@ -9,6 +9,8 @@ public class Compradores : MonoBehaviour
 	public int scream_on;
 	public int spencer_on;
 
+	bool email;
+
 	public static Compradores instance;
 
 	void Awake()
@@ -25,6 +27,10 @@ public class Compradores : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		transform.Translate(0.1f, 0, 0);
+		email = GameObject.FindGameObjectWithTag("Email").GetComponent<Email>().email;
+		if(email == false)
+		{
+			transform.Translate(0.1f, 0, 0);
+		}
 	}
 }

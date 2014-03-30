@@ -59,6 +59,8 @@ public class Revista : MonoBehaviour
 
 	int revista;
 
+	bool email;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -81,252 +83,259 @@ public class Revista : MonoBehaviour
 		square_off = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().square;
 		survivors_off = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().survivors;
 		revista = GameObject.FindGameObjectWithTag("Revista").GetComponent<Colocar>().revista;
+		email = GameObject.FindGameObjectWithTag("Email").GetComponent<Email>().email;
 
-		if(Input.GetKeyDown(KeyCode.Space))
+		if(email == false)
 		{
-			if(gordice_on == false && gordice_off == false && revista == 4)
+			if(Input.GetKeyDown(KeyCode.Space))
 			{
-				gordice.SetActive(true);
-				gordice_on = true;
-			}
-			if(gamer_on == false && gamer_off == false && revista == 3)
-			{
-				gamer.SetActive(true);
-				gamer_on = true;
-			}
-			if(kaboom_on == false && kaboom_off == false && revista == 5)
-			{
-				kaboom.SetActive(true);
-				kaboom_on = true;
-			}
-			if(scream_on == false && scream_off == false && revista == 7)
-			{
-				scream.SetActive(true);
-				scream_on = true;
-			}
-			if(blin_on == false && blin_off == false && revista == 1)
-			{
-				blin.SetActive(true);
-				blin_on = true;
-			}
-			if(foca_on == false && foca_off == false && revista == 2)
-			{
-				foca.SetActive(true);
-				foca_on = true;
-			}
-			if(miau_on == false && miau_off == false && revista == 6)
-			{
-				miau.SetActive(true);
-				miau_on = true;
-			}
-			if(rock_on == false && rock_off == false && revista == 8)
-			{
-				rock.SetActive(true);
-				rock_on = true;
-			}
-			if(spaghetti_on == false && spaghetti_off == false && revista == 9)
-			{
-				spaghetti.SetActive(true);
-				spaghetti_on = true;
-			}
-			if(spencer_on == false && spencer_off == false && revista == 10)
-			{
-				spencer.SetActive(true);
-				spencer_on = true;
-			}
-			if(square_on == false && square_off == false && revista == 11)
-			{
-				square.SetActive(true);
-				square_on = true;
-			}
-			if(survivors_on == false && survivors_off == false && revista == 12)
-			{
-				survivors.SetActive(true);
-				survivors_on = true;
+				if(gordice_on == false && gordice_off == false && revista == 4)
+				{
+					gordice.SetActive(true);
+					gordice_on = true;
+				}
+				if(gamer_on == false && gamer_off == false && revista == 3)
+				{
+					gamer.SetActive(true);
+					gamer_on = true;
+				}
+				if(kaboom_on == false && kaboom_off == false && revista == 5)
+				{
+					kaboom.SetActive(true);
+					kaboom_on = true;
+				}
+				if(scream_on == false && scream_off == false && revista == 7)
+				{
+					scream.SetActive(true);
+					scream_on = true;
+				}
+				if(blin_on == false && blin_off == false && revista == 1)
+				{
+					blin.SetActive(true);
+					blin_on = true;
+				}
+				if(foca_on == false && foca_off == false && revista == 2)
+				{
+					foca.SetActive(true);
+					foca_on = true;
+				}
+				if(miau_on == false && miau_off == false && revista == 6)
+				{
+					miau.SetActive(true);
+					miau_on = true;
+				}
+				if(rock_on == false && rock_off == false && revista == 8)
+				{
+					rock.SetActive(true);
+					rock_on = true;
+				}
+				if(spaghetti_on == false && spaghetti_off == false && revista == 9)
+				{
+					spaghetti.SetActive(true);
+					spaghetti_on = true;
+				}
+				if(spencer_on == false && spencer_off == false && revista == 10)
+				{
+					spencer.SetActive(true);
+					spencer_on = true;
+				}
+				if(square_on == false && square_off == false && revista == 11)
+				{
+					square.SetActive(true);
+					square_on = true;
+				}
+				if(survivors_on == false && survivors_off == false && revista == 12)
+				{
+					survivors.SetActive(true);
+					survivors_on = true;
+				}
 			}
 		}
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		if(other.tag == "Comprador")
+		if(email == false)
 		{
-			gordice_v = Random.Range(0, 3);
-			gamer_v = Random.Range(0, 3);
-			kaboom_v = Random.Range(0, 3);
-			scream_v = Random.Range(0, 3);
-			spencer_v = Random.Range(0, 3);
-			blin_v = Random.Range(0, 3);
-			foca_v = Random.Range(0, 3);
-			miau_v = Random.Range(0, 3);
-			rock_v = Random.Range(0, 3);
-			spaghetti_v = Random.Range(0, 3);
-			square_v = Random.Range(0, 3);
-			survivors_v = Random.Range(0, 3);
-		}
+			if(other.tag == "Comprador")
+			{
+				gordice_v = Random.Range(0, 3);
+				gamer_v = Random.Range(0, 3);
+				kaboom_v = Random.Range(0, 3);
+				scream_v = Random.Range(0, 3);
+				spencer_v = Random.Range(0, 3);
+				blin_v = Random.Range(0, 3);
+				foca_v = Random.Range(0, 3);
+				miau_v = Random.Range(0, 3);
+				rock_v = Random.Range(0, 3);
+				spaghetti_v = Random.Range(0, 3);
+				square_v = Random.Range(0, 3);
+				survivors_v = Random.Range(0, 3);
+			}
 
-		if(survivors_v == 1)
-		{
-			if(survivors_on == true)
+			if(survivors_v == 1)
 			{
-				survivors.SetActive(false);
-				survivors_on = false;
-				pontos ++;
+				if(survivors_on == true)
+				{
+					survivors.SetActive(false);
+					survivors_on = false;
+					pontos ++;
+				}
+				else
+				{
+					pontos --;
+				}
+				
 			}
-			else
+			if(square_v == 1)
 			{
-				pontos --;
+				if(square_on == true)
+				{
+					square.SetActive(false);
+					square_on = false;
+					pontos ++;
+				}
+				else
+				{
+					pontos --;
+				}
+				
 			}
-			
-		}
-		if(square_v == 1)
-		{
-			if(square_on == true)
+			if(spaghetti_v == 1)
 			{
-				square.SetActive(false);
-				square_on = false;
-				pontos ++;
+				if(spaghetti_on == true)
+				{
+					spaghetti.SetActive(false);
+					spaghetti_on = false;
+					pontos ++;
+				}
+				else
+				{
+					pontos --;
+				}
+				
 			}
-			else
+			if(rock_v == 1)
 			{
-				pontos --;
+				if(rock_on == true)
+				{
+					rock.SetActive(false);
+					rock_on = false;
+					pontos ++;
+				}
+				else
+				{
+					pontos --;
+				}
+				
 			}
-			
-		}
-		if(spaghetti_v == 1)
-		{
-			if(spaghetti_on == true)
+			if(miau_v == 1)
 			{
-				spaghetti.SetActive(false);
-				spaghetti_on = false;
-				pontos ++;
+				if(miau_on == true)
+				{
+					miau.SetActive(false);
+					miau_on = false;
+					pontos ++;
+				}
+				else
+				{
+					pontos --;
+				}
+				
 			}
-			else
+			if(gordice_v == 1)
 			{
-				pontos --;
+				if(gordice_on == true)
+				{
+					gordice.SetActive(false);
+					gordice_on = false;
+					pontos ++;
+				}
+				else
+				{
+					pontos --;
+				}
+				
 			}
-			
-		}
-		if(rock_v == 1)
-		{
-			if(rock_on == true)
+			if(foca_v == 1)
 			{
-				rock.SetActive(false);
-				rock_on = false;
-				pontos ++;
+				if(foca_on == true)
+				{
+					foca.SetActive(false);
+					foca_on = false;
+					pontos ++;
+				}
+				else
+				{
+					pontos --;
+				}
+				
 			}
-			else
+			if(blin_v == 1)
 			{
-				pontos --;
+				if(blin_on == true)
+				{
+					blin.SetActive(false);
+					blin_on = false;
+					pontos ++;
+				}
+				else
+				{
+					pontos --;
+				}
+				
 			}
-			
-		}
-		if(miau_v == 1)
-		{
-			if(miau_on == true)
+			if(gamer_v == 1)
 			{
-				miau.SetActive(false);
-				miau_on = false;
-				pontos ++;
+				if(gamer_on == true)
+				{
+					gamer.SetActive(false);
+					gamer_on = false;
+					pontos ++;
+				}
+				else
+				{
+					pontos --;
+				}
 			}
-			else
+			if(kaboom_v == 1)
 			{
-				pontos --;
+				if(kaboom_on == true)
+				{
+					kaboom.SetActive(false);
+					kaboom_on = false;
+					pontos ++;
+				}
+				else
+				{
+					pontos --;
+				}
 			}
-			
-		}
-		if(gordice_v == 1)
-		{
-			if(gordice_on == true)
+			if(scream_v == 1)
 			{
-				gordice.SetActive(false);
-				gordice_on = false;
-				pontos ++;
+				if(scream_on == true)
+				{
+					scream.SetActive(false);
+					scream_on = false;
+					pontos ++;
+				}
+				else
+				{
+					pontos --;
+				}
 			}
-			else
+			if(spencer_v == 1)
 			{
-				pontos --;
-			}
-			
-		}
-		if(foca_v == 1)
-		{
-			if(foca_on == true)
-			{
-				foca.SetActive(false);
-				foca_on = false;
-				pontos ++;
-			}
-			else
-			{
-				pontos --;
-			}
-			
-		}
-		if(blin_v == 1)
-		{
-			if(blin_on == true)
-			{
-				blin.SetActive(false);
-				blin_on = false;
-				pontos ++;
-			}
-			else
-			{
-				pontos --;
-			}
-			
-		}
-		if(gamer_v == 1)
-		{
-			if(gamer_on == true)
-			{
-				gamer.SetActive(false);
-				gamer_on = false;
-				pontos ++;
-			}
-			else
-			{
-				pontos --;
-			}
-		}
-		if(kaboom_v == 1)
-		{
-			if(kaboom_on == true)
-			{
-				kaboom.SetActive(false);
-				kaboom_on = false;
-				pontos ++;
-			}
-			else
-			{
-				pontos --;
-			}
-		}
-		if(scream_v == 1)
-		{
-			if(scream_on == true)
-			{
-				scream.SetActive(false);
-				scream_on = false;
-				pontos ++;
-			}
-			else
-			{
-				pontos --;
-			}
-		}
-		if(spencer_v == 1)
-		{
-			if(spencer_on == true)
-			{
-				spencer.SetActive(false);
-				spencer_on = false;
-				pontos ++;
-			}
-			else
-			{
-				pontos --;
+				if(spencer_on == true)
+				{
+					spencer.SetActive(false);
+					spencer_on = false;
+					pontos ++;
+				}
+				else
+				{
+					pontos --;
+				}
 			}
 		}
 	}
