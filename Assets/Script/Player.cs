@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
 	public bool spencer;
 	public bool square;
 	public bool survivors;
+	public bool ok;
 
 	bool email;
 
@@ -66,58 +67,72 @@ public class Player : MonoBehaviour
 			if(other.tag == "Escada")
 			{
 				escada = true;
+				ok = true;
 			}
 			if(other.tag == "Parede_baixo")
 			{
 				escada = false;
+				ok = true;
 			}
 			if(other.tag == "Blin")
 			{
 				blin = false;
+				ok = true;
 			}
 			if(other.tag == "Foca")
 			{
 				foca = false;
+				ok = true;
 			}
 			if(other.tag == "Gamer")
 			{
 				gamer = false;
+				ok = true;
 			}
 			if(other.tag == "Gordice")
 			{
 				gordice = false;
+				ok = true;
 			}
 			if(other.tag == "Kaboom")
 			{
 				kaboom = false;
+				ok = true;
 			}
 			if(other.tag == "Miau")
 			{
 				miau = false;
+				ok = true;
 			}
 			if(other.tag == "Scream")
 			{
 				scream = false;
+				ok = true;
 			}
 			if(other.tag == "Rock")
 			{
 				rock = false;
+				ok = true;
 			}
 			if(other.tag == "Spaghetti")
 			{
 				spaghetti = false;
+				ok = true;
 			}
 			if(other.tag == "Spencer")
 			{
 				spencer = false;
+				ok = true;
 			}
 			if(other.tag == "Square")
 			{
 				square = false;
+				ok = true;
 			}
 			if(other.tag == "Survivors")
 			{
 				survivors = false;
+				ok = true;
 			}
 		}
 	}
@@ -129,50 +144,62 @@ public class Player : MonoBehaviour
 			if(other.tag == "Blin")
 			{
 				blin = true;
+				ok = false;
 			}
 			if(other.tag == "Foca")
 			{
 				foca = true;
+				ok = false;
 			}
 			if(other.tag == "Gamer")
 			{
 				gamer = true;
+				ok = false;
 			}
 			if(other.tag == "Gordice")
 			{
+				ok = false;
 				gordice = true;
 			}
 			if(other.tag == "Kaboom")
 			{
 				kaboom = true;
+				ok = false;
 			}
 			if(other.tag == "Miau")
 			{
 				miau = true;
+				ok = false;
 			}
 			if(other.tag == "Scream")
 			{
 				scream = true;
+				ok = false;
 			}
 			if(other.tag == "Rock")
 			{
 				rock = true;
+				ok = false;
 			}
 			if(other.tag == "Spaghetti")
 			{
 				spaghetti = true;
+				ok = false;
 			}
 			if(other.tag == "Spencer")
 			{
 				spencer = true;
+				ok = false;
 			}
 			if(other.tag == "Square")
 			{
 				square = true;
+				ok = false;
 			}
 			if(other.tag == "Survivors")
 			{
 				survivors = true;
+				ok = false;
 			}
 		}
 	}

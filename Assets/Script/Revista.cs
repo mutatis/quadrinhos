@@ -58,6 +58,7 @@ public class Revista : MonoBehaviour
 	int pontos;
 
 	int revista;
+	int colocar;
 
 	bool email;
 
@@ -84,10 +85,13 @@ public class Revista : MonoBehaviour
 		survivors_off = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().survivors;
 		revista = GameObject.FindGameObjectWithTag("Revista").GetComponent<Colocar>().revista;
 		email = GameObject.FindGameObjectWithTag("Email").GetComponent<Email>().email;
+		colocar = GameObject.FindGameObjectWithTag("Entrega").GetComponent<Entrega>().revista;
+
+		Debug.Log(colocar);
 
 		if(email == false)
 		{
-			if(Input.GetKeyDown(KeyCode.Space))
+			if(Input.GetKeyDown(KeyCode.Space) && colocar > 0)
 			{
 				if(gordice_on == false && gordice_off == false && revista == 4)
 				{
