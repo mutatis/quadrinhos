@@ -3,7 +3,14 @@ using System.Collections;
 
 public class Play : MonoBehaviour 
 {
+	public bool ia;
 
+	public static Play instance;
+	
+	void Awake()
+	{
+		instance = this;	
+	}
 	// Use this for initialization
 	void Start () 
 	{
@@ -19,5 +26,15 @@ public class Play : MonoBehaviour
 	void OnMouseDown()
 	{
 		Application.LoadLevel("Game");
+	}
+
+	void OnMouseOver()
+	{
+		ia = true;
+	}
+	
+	void OnMouseExit()
+	{
+		ia = false;
 	}
 }
